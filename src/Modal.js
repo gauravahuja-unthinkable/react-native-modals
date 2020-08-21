@@ -64,8 +64,10 @@ export default class Modal extends Component<ModalProps, State> {
   }
 
   destroyModal() {
-    this.sibling.destroy();
-    this.sibling = null;
+    if (this.sibling) {
+      this.sibling.destroy();
+      this.sibling = null;
+    }
   }
 
   renderModal() {
